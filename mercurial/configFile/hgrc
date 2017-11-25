@@ -1,0 +1,22 @@
+[ui]
+merge = meld
+
+[pager]
+pager = LESS='FRX' less
+
+[extensions]
+hgext.color=
+hgext.graphlog=
+pager=
+hgext.extdiff=
+hgext.hgk=
+hgext.strip=
+hgext.churn=
+hgext.fetch=
+mq=
+progress =
+rebase =
+
+[extdiff]
+cmd.vdiff = meld
+

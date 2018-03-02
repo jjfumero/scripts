@@ -1,13 +1,20 @@
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     diffjava = diff -- '*.java'
+    diffcached = diff --cached
+
+[commit]
+    template = /opt/git/git-commit-template.txt
+
+[core]	
+    editor = vim 
 
 [color]
-	ui = true
+    ui = true
 
 [color "status"]
-	added = green
-	changed = blue
-	untracked = magenta
-	deleted = red
+    added = green
+    changed = blue
+    untracked = magenta
+    deleted = red
 

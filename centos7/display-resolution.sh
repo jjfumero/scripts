@@ -7,7 +7,8 @@
 # Then add the following lines (with the correct parameters) 
 # to /etc/gdm/Init/Default after the line OLD_IFS=$IFS
 
-OUTPUT=eDP-1
+#OUTPUT=eDP-1
+OUTPUT=DP-1
 xrandr --newmode "1280x720_60.00"   74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync
 xrandr --addmode $OUTPUT 1280x720_60.00
 xrandr --output $OUTPUT --mode 1280x720_60.00 

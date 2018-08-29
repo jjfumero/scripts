@@ -8,7 +8,7 @@ use strict;
 use GRID::Machine; 
 
 # List of machines
-my @machines = qw/ avus suzuka /;
+my @machines = qw/ tornado hurricane /;
 my %m = {};
 
 for (@machines) {

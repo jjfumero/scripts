@@ -186,7 +186,7 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 	size_t len;
     char buffer[204800];
     cl_build_status bldstatus;
-    ret = clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len);    
+    ret = clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len); 
 	printf("\n\n**Build Log:** \n%s \n", buffer);
 	cout << endl;
 

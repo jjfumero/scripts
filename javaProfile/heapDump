@@ -1,0 +1,9 @@
+
+Run the java process with -XX:+HeapDumpOnOutOfMemoryError
+java -XX:+HeapDumpOnOutOfMemoryError ... Main 
+
+
+## Dump heap 
+jmap -dump:format=b,file=heap.bin <PID_JAVA_PROCESS>
+
+

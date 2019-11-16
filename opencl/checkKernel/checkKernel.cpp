@@ -36,7 +36,7 @@ using namespace std;
 	#include <CL/cl.h>
 #endif
 
-const int PLATFORM_ID = 0;
+const int PLATFORM_ID = 3;
 
 string platformName;
 cl_uint numPlatforms;

@@ -1,0 +1,36 @@
+[DEFAULT]
+# Ban hosts for one hour:
+bantime = 3600
+
+findtime = 10800  ## band time for 3 hours
+maxentry = 3
+
+# Override /etc/fail2ban/jail.d/00-firewalld.conf:
+banaction = iptables-multiport
+
+ignoreip = 127.0.0.1/8  
+
+
+[sshd]
+enabled = true
+
+# Automatically ban access from root user
+[ssh-ban-root]
+enabled = true
+# File to be located in filter.d/ 
+filter = ssh-ban-root     
+logpath = /var/log/secure
+maxretry = 0
+bantime = 15770000
+# 15770000 sec = 6 months
+
+
+# Automatically ban non-valid users
+[sshd-invaliduser]
+enabled = true
+# File to be located in filter.d/ 
+filter = sshd-invaliduser
+logpath = /var/log/secure
+maxretry = 0
+bantime = 15770000
+

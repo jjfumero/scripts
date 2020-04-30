@@ -36,7 +36,7 @@ using namespace std;
 	#include <CL/cl.h>
 #endif
 
-const int PLATFORM_ID = 3;
+const int PLATFORM_ID = 0;
 
 string platformName;
 cl_uint numPlatforms;
@@ -191,7 +191,7 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 	cout << endl;
 
 	if (buildErr != CL_SUCCESS) {
-		cout << "Abort" << endl;
+		cout << "BUILD -- ERROR" << endl;
 		return 1;
 	}	
 

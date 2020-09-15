@@ -175,8 +175,9 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 		return -1;
 	}
 
+	const char* flags = "-cl-std=CL2.0";
 	cl_int ret;
-	cl_int buildErr = clBuildProgram(program, numDevices, devices, NULL, NULL, NULL);
+	cl_int buildErr = clBuildProgram(program, numDevices, devices, flags, NULL, NULL);
 	if (buildErr != CL_SUCCESS) {
 		cout << "Error compiling the kernel" << endl;
 	}

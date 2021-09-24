@@ -36,7 +36,7 @@ using namespace std;
 	#include <CL/cl.h>
 #endif
 
-const int PLATFORM_ID = 0;
+const int PLATFORM_ID = 1;
 
 string platformName;
 cl_uint numPlatforms;
@@ -175,7 +175,8 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 		return -1;
 	}
 
-	const char* flags = "-cl-std=CL2.0";
+	//const char* flags = "-cl-std=CL2.0";
+	const char* flags = "";
 	cl_int ret;
 	cl_int buildErr = clBuildProgram(program, numDevices, devices, flags, NULL, NULL);
 	if (buildErr != CL_SUCCESS) {
@@ -185,7 +186,7 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 	// Print log 
 	cl_device_id device_id = devices[0];
 	size_t len;
-    char buffer[204800];
+    char buffer[2004800];
     cl_build_status bldstatus;
     ret = clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len); 
 	printf("\n\n**Build Log:** \n%s \n", buffer);
@@ -199,7 +200,7 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 	kernel = clCreateKernel(program, kernelName, &status);
 
 	if (status != CL_SUCCESS) {
-		cout << "Error creating the kernel object" << endl;
+		cout << "Error creating the kernel object with error code: " << status << endl;
 	}
 }
 

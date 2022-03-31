@@ -175,8 +175,8 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 		return -1;
 	}
 
-	//const char* flags = "-cl-std=CL2.0";
-	const char* flags = "";
+	const char* flags = "-cl-std=CL2.0";
+	//const char* flags = "";
 	cl_int ret;
 	cl_int buildErr = clBuildProgram(program, numDevices, devices, flags, NULL, NULL);
 	if (buildErr != CL_SUCCESS) {
@@ -195,10 +195,11 @@ int openclInitialization(const char* fileName, const char* kernelName) {
 	if (buildErr != CL_SUCCESS) {
 		cout << "BUILD -- ERROR" << endl;
 		return 1;
-	}	
+	} else {
+		cout << "BUILD OK " << endl;
+	}
 
 	kernel = clCreateKernel(program, kernelName, &status);
-
 	if (status != CL_SUCCESS) {
 		cout << "Error creating the kernel object with error code: " << status << endl;
 	}

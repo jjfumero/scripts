@@ -2,3 +2,5 @@ openssl req -new -x509 -newkey rsa:2048 -keyout /home/$USER/bin/drivers/Nvidia.k
 
 sudo mokutil --import /home/$USER/bin/drivers/Nvidia.der
 
+## Then reboot and follow the steps
+
